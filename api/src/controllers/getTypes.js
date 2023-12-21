@@ -3,19 +3,18 @@ const { Type } = require('../db');
 
 const getTypes = async () => {
     const typesAPI = (await axios.get(`https://pokeapi.co/api/v2/type`)).data.results;
-    typesAPI.forEach(async type => {
+    typesAPI.forEach(async elem => {
         await Type.findOrCreate({
             where: {
-                id: type.type.slot,
-                name: type.type.name
+                name: elem.name
             }
         })
     });
 
-    const infoMapeada = typesAPI.map(type => {
+    const infoMapeada = typesAPI.map((elem) => {
         return {
-            id: type.types.slot,
-            name: type.types.name
+            id: elem.url.id,
+            name: elem.name
         }
     });
 

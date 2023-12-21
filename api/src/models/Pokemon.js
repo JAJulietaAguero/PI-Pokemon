@@ -10,63 +10,36 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [0, 20]
-      }
+      //allowNull: false,
+      unique: true
     },
-    hp: {
+    life: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      //allowNull: false
     },
     attack: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      //allowNull: false
     },
     defense: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      //allowNull: false
     },
     speed: {
       type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min: 0,
-        max: 999
-      }
+      //allowNull: false
     },
     height: {
         type: DataTypes.INTEGER,
-        defaultValue: 0,
-        validate: {
-          min: 0,
-          max: 999
-        }
+        //allowNull: false
       },
     weight: {
       type: DataTypes.INTEGER,
-        defaultValue: 0,
-        validate: {
-          min: 0,
-          max: 999
-        }
+      //allowNull: false
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false
+      //allowNull: false
     }
   }, 
   {timestamps: false});
