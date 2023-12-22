@@ -10,36 +10,36 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
-      //allowNull: false,
+      allowNull: false,
       unique: true
     },
     life: {
       type: DataTypes.INTEGER,
-      //allowNull: false
+      allowNull: false
     },
     attack: {
       type: DataTypes.INTEGER,
-      //allowNull: false
+      allowNull: false
     },
     defense: {
       type: DataTypes.INTEGER,
-      //allowNull: false
+      allowNull: false
     },
     speed: {
       type: DataTypes.INTEGER,
-      //allowNull: false
+      allowNull: false
     },
     height: {
         type: DataTypes.INTEGER,
-        //allowNull: false
+        allowNull: false
       },
     weight: {
       type: DataTypes.INTEGER,
-      //allowNull: false
+      allowNull: false
     },
     image: {
       type: DataTypes.STRING,
-      //allowNull: false
+      allowNull: false
     }
   }, 
   {timestamps: false});

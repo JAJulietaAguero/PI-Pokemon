@@ -17,7 +17,7 @@ router.get("/", async(req, res) => {
             res.status(200).json(allPokemones);
         }
     } catch (error) {
-        res.status(400).json({ error: error.message })
+        res.status(404).json({ error: `No Pokemon found with the name ${name}` })
     }
 });
 
@@ -28,26 +28,18 @@ router.get("/:id", async(req, res) => {
     try {
         if(source === 'API') {
             const foundPokemonAPI = await pokemonAPI(id, source);
-            if (foundPokemonAPI =! null) {
 
                 res.status(200).json(foundPokemonAPI)
-            } else {
-                res.status(404).json({ error: error.message})
-            }
         }
         
         if(source === 'DB') {
             const foundPokemonDB = await pokemonDB(id);
-            if (foundPokemonDB =! null) {
 
-                res.status(200).json(foundPokemonDB)
-            } else {
-                res.status(404).json({ error: error.message})
-            }
+               res.status(200).json(foundPokemonDB)
         }
         
     } catch (error) {
-        res.status(400).json({ error: "Not found" })
+        res.status(400).json({ error: "No Pokemon found" })
     }
 });
 

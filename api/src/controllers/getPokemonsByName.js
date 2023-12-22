@@ -1,44 +1,45 @@
 const axios = require('axios');
-const { Pokemon } = require('../db');
+const { Pokemon, Type } = require('../db');
 
 const pokemonName = async (name) => {
-    let infoMapeada;
+    let infoMapeada = [];
     const pokemosDB = await Pokemon.findAll({
         where: {
             name: name
         },
+        include: {
+            model: Type,
+            attributes: ['name']
+        },
         limit: 12
     });
 
-console.log(pokemosDB)
+try {
     const API = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-//VALIDAR SI HAY INFO EN CONST API
-    infoMapeada = [{
-        id: API.data.id,
-        name: API.data.name,
-        life: API.data.stats[0].base_stat,
-        attack: API.data.stats[1].base_stat,
-        defense: API.data.stats[2].base_stat,
-        speed: API.data.stats[5].base_stat,
-        height: API.data.height,
-        weight: API.data.weight,
-        image: API.data.sprites.front_default,
-        type: API.data.types.map((elem) => {
-            return {
-                id: elem.slot,
-                name: elem.type.name
-            }
-        })
-    }]
-//1er escenario:
-//               el name se encuentra en la api y la db =  inforsults : [pokemondb] + [pokemonApi]
-//2do escenario:
-//               el name se encuentra en la db y no en la api = 404 por api externa 
-//3er escenario:
-//               el name no se encuentra en la db y si se encuentra en la api = inforsults : [] + [pokemonApi]
+        infoMapeada=[{
+            id: API.data.id,
+            name: API.data.name,
+            life: API.data.stats[0].base_stat,
+            attack: API.data.stats[1].base_stat,
+            defense: API.data.stats[2].base_stat,
+            speed: API.data.stats[5].base_stat,
+            height: API.data.height,
+            weight: API.data.weight,
+            image: API.data.sprites.front_default,
+            types: API.data.types.map((elem) => {
+                return {
+                    name: elem.type.name
+                }
+            })
+        } ]
+
+} catch (error) {
+    console.warn(`Error fetching data: ${error.message}`);
+}
+
 
     const infoResults = [...infoMapeada, ...pokemosDB];
-console.log(infoResults)
+    console.log(infoResults)
     if (infoResults.length === 0) {
         return { error: `The pokemon was not found ${name}`}
     }

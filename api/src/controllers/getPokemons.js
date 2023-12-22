@@ -14,6 +14,8 @@ const pokemonsAPI = async () => {
     return data.map((res) => res.data);
    });
 
+
+
    let arrayPokemonsApi = response.map((pokemon) => {
     return {
         id: pokemon.id,
@@ -27,7 +29,6 @@ const pokemonsAPI = async () => {
         image: pokemon.sprites.front_default,
         types: pokemon.types.map((elem) => {
             return {
-                id: elem.slot,
                 name: elem.type.name
             }
         })
