@@ -15,8 +15,8 @@ const pokemonAPI = async (id) => {
                 speed: API.data.stats[5].base_stat,
                 height: API.data.height,
                 weight: API.data.weight,
-                image: API.data.sprites.front_default,
-                types: API.data.types.map((elem) => {
+                image: API.data.sprites.other.dream_world.front_default,
+                Types: API.data.types.map((elem) => {
                     return {
                         name: elem.type.name
                     }

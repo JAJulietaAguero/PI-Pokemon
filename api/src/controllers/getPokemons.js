@@ -3,7 +3,7 @@ const { Pokemon, Type } = require('../db');
 
 //Pokemons API
 const pokemonsAPI = async () => {
-   const response = await axios.get(`https://pokeapi.co/api/v2/pokemon`)
+   const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=72`)
    .then(async (data) => {
     return data.data.results;
    })
@@ -26,8 +26,8 @@ const pokemonsAPI = async () => {
         speed: pokemon.stats[5].base_stat,
         height: pokemon.height,
         weight: pokemon.weight,
-        image: pokemon.sprites.front_default,
-        types: pokemon.types.map((elem) => {
+        image: pokemon.sprites.other.dream_world.front_default,
+        Types: pokemon.types.map((elem) => {
             return {
                 name: elem.type.name
             }
@@ -59,7 +59,7 @@ const pokemonsDB = async () => {
 const allPokemons = async () => {
     const ApiInfo = await pokemonsAPI();
     const DBInfo = await pokemonsDB();
-    const TotalInfo = [...ApiInfo, ...DBInfo];
+    const TotalInfo = [...DBInfo,...ApiInfo, ];
     return TotalInfo;
 }
 
