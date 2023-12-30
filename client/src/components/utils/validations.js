@@ -91,6 +91,8 @@ const validation = (form) => {
         errors.image = "This field cannot be incomplete"
     };
 
+    return errors;
+
 };
 
 export default validation;
