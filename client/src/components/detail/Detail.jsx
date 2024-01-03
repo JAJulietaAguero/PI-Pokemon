@@ -1,3 +1,4 @@
+import style from './Detail.module.css';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,16 +17,28 @@ const Detail = () => {
     }, [dispatch, params?.id])
 
     return (
-        <div>
-            <h2>{pokemonDetail?.name}</h2>
+        <div className={style.detail}>
+         
+            <div className={style.detailContainer}>
+            <img src={pokemonDetail?.image} alt={pokemonDetail?.name}/>
+            <div className={style.box}>
+                 
+            <h2 className={style.detailName}>{pokemonDetail?.name}</h2>
+            <div className={style.boxDetail}>
             <p><b>ID:</b> {pokemonDetail?.id}</p>
             <p><b>Life:</b> {pokemonDetail?.life}</p>
             <p><b>Attack:</b> {pokemonDetail?.attack}</p>
             <p><b>Defense:</b> {pokemonDetail?.defense}</p>
             <p><b>Speed:</b> {pokemonDetail?.speed}</p>
             <p><b>Types:</b> {pokemonDetail.Types?.map(el =>  <p key={el.name}>{el.name}</p> )}</p>
-            <img src={pokemonDetail?.image} alt={pokemonDetail?.name}/>
-            <Button path="/home" text="X"/>
+            </div>
+            </div>
+    
+            </div>
+
+           
+            <Button  path="/home" text="Back" className={style.detailButton}/>
+            
         </div>
     )
 }

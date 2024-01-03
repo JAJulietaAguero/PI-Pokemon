@@ -1,8 +1,11 @@
+import style from './Pagination.module.css';
 import React from 'react';
 import Card from '../card/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPokemons } from '../../redux/actions';
 import Loader from '../loader/Loader';
+import NotFound from '../notFound/NotFound';
+import Filter from '../filter/Filter';
 
 const pokemonsPerPage = 12;
 
@@ -42,12 +45,21 @@ const Pagination = () => {
 
     return (
         <div>
-            { loading ? <Loader /> : (<div>
+            <div>
+            <Filter />
+             <button className={style.paginationButton}  onClick={prevHandler}>Previous</button>
 
-                {
-                pokemonsToDisplay?.map((pokemon) => {
+                <span>{current + 1}</span>
+
+            <button className={style.paginationButton}  onClick={nextHandler}>Next</button>
+        </div>
+        <div className={style.pagination}>
+            { loading ? <Loader /> :
+
+                
+                pokemonsToDisplay.length?pokemonsToDisplay.map((pokemon) => {
                     return (
-                        <Card
+                        <Card 
                         key = {pokemon?.id}
                         id = {pokemon?.id}
                         name = {pokemon?.name}
@@ -55,17 +67,24 @@ const Pagination = () => {
                         image = {pokemon?.image}
                         />
                     )
-                })
+                }):
+                <NotFound />
                 
-            }
-                 <button onClick={prevHandler}>Previous</button>
+            
+                 
+             }
 
-                  <span>{current + 1}</span>
-
-                <button onClick={nextHandler}>Next</button>
-            </div>) }
-
+        
         </div>
+
+            <div>
+             <button className={style.paginationButton}  onClick={prevHandler}>Previous</button>
+
+               <span>{current + 1}</span>
+
+            <button className={style.paginationButton}  onClick={nextHandler}>Next</button>
+        </div>
+</div>
     )
 }
 

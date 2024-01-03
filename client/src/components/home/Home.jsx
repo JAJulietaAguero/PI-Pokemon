@@ -1,9 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Nav from '../nav/Nav';
-import NotFound from '../notFound/NotFound';
 import Pagination from '../pagination/Pagination';
 import { getTypes } from '../../redux/actions';
+import style from './Home.module.css'
 
 const Home = () => {
     
@@ -11,13 +11,12 @@ const dispatch = useDispatch();
 
 React.useEffect(() => {
     dispatch(getTypes())
-}, [])
+}, [dispatch])
 
 
     return (
-        <div>
+        <div className={style.home}>
             <Nav />
-
             <Pagination />
         </div>
     )

@@ -1,0 +1,40 @@
+.form {
+    background-image: url('../images/farben-verlauf-pastell-hintergrund.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 120vh;
+    width: 99vw;
+}
+
+.formInput {
+    background-color: rgba(239, 239, 239, 0.97);
+    border-radius: 50px;
+    padding: 8px 60px 8px 10px;
+    text-decoration: none;
+}
+
+.formButton {
+    padding: 8px 8px;
+    color: #0b0b0c;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform:capitalize;
+    overflow: hidden;
+    transition: .5s;
+    /* letter-spacing: 2px; */
+    border-radius: 50px;
+    border: 0.05rem solid #595550;
+    margin-top: 20px;
+}
+
+.formButton:hover {
+    background: #deded8;
+    color: #f6f1f1;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #bdbeba,
+      0 0 15px #918a87,
+      0 0 20px #918a87,
+      0 0 20px #918a87;
+}

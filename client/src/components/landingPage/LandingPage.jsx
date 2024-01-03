@@ -1,10 +1,17 @@
+import style from './LandingPage.module.css';
 import Button from "../button/Button";
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     return (
-        <div>
-            <h1>POKEMONS</h1>
-            <Button path='home' text='Start' />
+        <div className={style.landingContainer}>
+
+            <div >
+            <Link to='/home'>
+            <button className={style.landingButton}>Start</button>
+            </Link>
+            </div>
+
         </div>
     )
 }

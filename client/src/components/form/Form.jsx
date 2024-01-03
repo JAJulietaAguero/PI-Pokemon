@@ -1,4 +1,4 @@
-
+import style from './Form.module.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -89,7 +89,7 @@ const Form = () => {
     
     return (
         <form onSubmit={handleSubmit}>
-           <div >
+           <div className={style.form}>
            <div>
              <label htmlFor="name">Name: </label>
             </div>
@@ -187,7 +187,7 @@ const Form = () => {
             </div>
             
             <div>
-             <button type="submit" >
+             <button className={style.formButton} type="submit" >
                 Create Pokemon
              </button>
             </div>
@@ -197,9 +197,10 @@ const Form = () => {
                     <p>Pokemon successfully created</p>
                 </div>
             )}
+            
             <div>
-             <button>
-                <Link to="/home">Back to home</Link>
+             <button className={style.formButton}>
+                <Link  to="/home">Back to home</Link>
              </button>
             </div>
            </div>

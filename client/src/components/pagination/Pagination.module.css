@@ -1,0 +1,45 @@
+.pagination {
+display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 20px;   
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.loadingNotFound{
+  margin-left: 740px;
+
+
+}
+.paginationButton {
+    position: relative;
+    display: inline-block;
+    padding: 8px 8px;
+    margin: 30px;
+    color: #0b0b0c;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform:capitalize;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    border: 0.05rem solid #595550;
+}
+
+.paginationButton:hover {
+    background: #deded8;
+    color: #f6f1f1;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #bdbeba,
+      0 0 15px #918a87,
+      0 0 20px #918a87,
+      0 0 20px #918a87;
+}
+
+.paginationCurrent {
+    text-transform:capitalize;
+    color: #0b0b0c;
+}

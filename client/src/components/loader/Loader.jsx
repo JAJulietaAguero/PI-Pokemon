@@ -1,9 +1,9 @@
 import React from 'react';
 import { Oval } from 'react-loader-spinner';
-
+import style from '../pagination/Pagination.module.css'
 const Loader = () => {
     return (
-        <div className='loading'>
+        <div className={style.loadingNotFound}>
             <Oval
   visible={true}
   height="80"

@@ -1,15 +1,11 @@
 import React from 'react';
-
+import style from '../pagination/Pagination.module.css'
 const NotFound = () => {
     return (
-        <div>
-            <div className='div_title'>
+        <div className={style.loadingNotFound}>
+         
             <h2 >Pokemon not found!</h2>
-        </div>
-
-        <div value={'Sort by'} className='div_title'>
-            {'hola'}
-        </div>
+       
         </div>
         
     )

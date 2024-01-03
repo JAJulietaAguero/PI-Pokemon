@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterBy, orderBy } from '../../redux/actions';
-
+import style from './Filter.module.css'
  const Filter = () => {
     const dispatch = useDispatch();
     const { types } = useSelector((state) => state);
@@ -18,7 +18,7 @@ import { filterBy, orderBy } from '../../redux/actions';
     }
 
     return (
-        <div>
+        <div className={style.boxFilters}>
             <select className="select" onChange={handleSelect2} name="" id="">
                 <option className="option" value="default">Sort by</option>
                 <optgroup className="optionGroup" label="Attack">
