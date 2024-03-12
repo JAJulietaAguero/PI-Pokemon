@@ -3,20 +3,20 @@ nav{
    justify-content:space-around;
    padding: 25px 35px 10px 25px;
    box-sizing:border-box;
-	background: rgb(0, 0, 0);
-    
+   background: rgba(75, 107, 156, 0.992);  
 }
-.image{
-    width:90px;
-    height:70px;
-    background:none;
-border:none;
 
+.image{
+    width:120px;
+    height:60px;
+    background:none;
+    border:none;
+    cursor: pointer;
 }
+
 .iconButton{
 background:none;
 border:none;
-
 }
 
 button:active {

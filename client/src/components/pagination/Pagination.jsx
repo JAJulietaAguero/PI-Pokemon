@@ -47,11 +47,6 @@ const Pagination = () => {
         <div>
             <div>
             <Filter />
-             <button className={style.paginationButton}  onClick={prevHandler}>Previous</button>
-
-                <span>{current + 1}</span>
-
-            <button className={style.paginationButton}  onClick={nextHandler}>Next</button>
         </div>
         <div className={style.pagination}>
             { loading ? <Loader /> :
@@ -80,7 +75,7 @@ const Pagination = () => {
             <div>
              <button className={style.paginationButton}  onClick={prevHandler}>Previous</button>
 
-               <span>{current + 1}</span>
+               <span className={style.paginationCurrent}>{current + 1}</span>
 
             <button className={style.paginationButton}  onClick={nextHandler}>Next</button>
         </div>

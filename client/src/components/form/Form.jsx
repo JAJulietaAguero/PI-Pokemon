@@ -71,7 +71,7 @@ const Form = () => {
 
     React.useEffect(() => {
         if (form.name !== "" || form.life !== "" || form.attack !== "" || form.defense !== "" || form.speed !== "" ||
-        form.height !== "" || form.weight !== "" || form.image !== "") {
+        form.height !== "" || form.weight !== "" || form.image !== "" ) {
             const formValidated = validation(form);
             setErrors(formValidated) //Le doy tiempo al estado que cambie y después valide y el condicional es para que no tire los errores cuando está vacío
         }
@@ -88,13 +88,12 @@ const Form = () => {
 
     
     return (
-        <form onSubmit={handleSubmit}>
-           <div className={style.form}>
+        <form className={style.form} onSubmit={handleSubmit}>
+           <div>
+            <h1>CREATE YOUR POKEMON</h1>
            <div>
              <label htmlFor="name">Name: </label>
-            </div>
-           <div>
-             <input onChange={handleChange} type="text" name="name" value={form.name}></input>
+             <input className={style.formInput} onChange={handleChange} type="text" name="name" value={form.name}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.name ? <span>{errors.name}</span> : null}
@@ -102,9 +101,7 @@ const Form = () => {
 
            <div>
              <label htmlFor="life">Life: </label>
-           </div>
-           <div>
-             <input onChange={handleChange} type="number" name="life" value={form.life}></input>
+             <input className={style.formInput} onChange={handleChange} type="number" name="life" value={form.life}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.life ? <span>{errors.life}</span> : null}
@@ -112,9 +109,7 @@ const Form = () => {
             
            <div>
              <label htmlFor="attack">Attack: </label>
-           </div>
-           <div>
-             <input onChange={handleChange} type="number" name="attack" value={form.attack}></input>
+             <input className={style.formInput} onChange={handleChange} type="number" name="attack" value={form.attack}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.attack ? <span>{errors.attack}</span> : null}
@@ -122,9 +117,7 @@ const Form = () => {
             
             <div>
              <label htmlFor="defense">Defense: </label>
-            </div>
-            <div>
-             <input onChange={handleChange} type="number" name= "defense" value={form.defense}></input>
+             <input className={style.formInput} onChange={handleChange} type="number" name= "defense" value={form.defense}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.defense ? <span>{errors.defense}</span> : null}
@@ -132,9 +125,7 @@ const Form = () => {
             
             <div>
              <label htmlFor="speed">Speed: </label>
-            </div>
-            <div>
-             <input onChange={handleChange} type="number" name="speed" value={form.speed}></input>
+             <input className={style.formInput} onChange={handleChange} type="number" name="speed" value={form.speed}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.speed ? <span>{errors.speed}</span> : null}
@@ -142,9 +133,7 @@ const Form = () => {
             
             <div>
               <label htmlFor="height">Height: </label>
-            </div>
-            <div>
-              <input onChange={handleChange} type="number" name="height" value={form.height}></input>
+              <input className={style.formInput} onChange={handleChange} type="number" name="height" value={form.height}></input>
               
               <hr style={{ borderStyle: "none"}}/>
               {errors.height ? <span>{errors.height}</span> : null}
@@ -152,9 +141,7 @@ const Form = () => {
 
             <div>
              <label htmlFor="weight">Weight: </label>
-            </div>
-            <div>
-             <input onChange={handleChange} type="number" name="weight" value={form.weight}></input>
+             <input className={style.formInput} onChange={handleChange} type="number" name="weight" value={form.weight}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.weight ? <span>{errors.weight}</span> : null}
@@ -162,9 +149,7 @@ const Form = () => {
             
             <div>
              <label htmlFor="image">Image: </label>
-            </div>
-            <div>
-             <input onChange={handleChange} type="url" name="image" value={form.images}></input>
+             <input className={style.formInput} onChange={handleChange} type="url" name="image" value={form.images}></input>
              
              <hr style={{ borderStyle: "none"}}/>
              {errors.image ? <span>{errors.image}</span> : null}
@@ -173,8 +158,6 @@ const Form = () => {
             <div>
                 <div>
                  <label htmlFor="types">Types: </label>
-                </div>
-                <div>
                 <select onChange={handleChange} id ="types" name="types" value={form.types}>
                  <option value="">Select the types</option>
                   {types.map((type) => (

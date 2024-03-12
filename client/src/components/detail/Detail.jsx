@@ -37,7 +37,7 @@ const Detail = () => {
             </div>
 
            
-            <Button  path="/home" text="Back" className={style.detailButton}/>
+            <Button className={style.detailButton} path="/home" text="Back" />
             
         </div>
     )

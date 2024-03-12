@@ -1,19 +1,20 @@
 .card {
     margin: 35px;
-    width: 25rem;
+    width: 15rem;
+    height: 20rem;
     border-radius: 10px;
     display: inline-block;
     padding: 0.5em;
-    border: 0.05rem solid #595550;
+    border: 0.05rem solid #2665bcae;
     border-radius: 8px;
-    background-color: rgba(133, 133, 124, 0.5); 
+    background-color: rgba(244, 244, 227, 0.774); 
     
 }
 
 .card:hover {
     box-shadow: 8px 8px 20px 0px rgba(66, 68, 90, 1);
     transition: 1s;
-    background-color: rgba(251, 251, 247, 0.5);
+    background-color: rgba(34, 109, 174, 0.488);
     cursor: pointer;
 }
 
@@ -31,31 +32,25 @@
 
 .cardContainerTypes {
    display: flex;
-   
    justify-content:center;
-   
-    color: #d7dfd1
+   color: #d7dfd1;
+   border-radius: 50px;
 }
 
 .cardTypes {
-    /* display: inline-block; */
-    /* margin-top: 2rem;
-    margin-left: 5%;
-    margin-right: 5%;
-    padding: 0.3rem; */
     border-radius: 0.2rem;
     color: #d7dfd1;
-    background-color: rgba(117, 114, 64, 0.5);
-    width: 5rem;
+    background-color: rgba(66, 103, 159, 0.852);
+    width: 85px;
     margin: auto;
+    margin-top: 2rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 650;
     text-transform: uppercase;
-    /* letter-spacing: 2px; */
+    letter-spacing: 1px;
 }
 
 img{
     width:200px ;
     height:200px
-   
 }

@@ -1,12 +1,15 @@
 import style from './LandingPage.module.css';
-import Button from "../button/Button";
 import { Link } from 'react-router-dom';
+import iconpoke from '../images/iconpoke.png';
 
 const LandingPage = () => {
     return (
-        <div className={style.landingContainer}>
+        <div>
 
-            <div >
+            <div>
+            <img className={style.image} src={iconpoke}/>
+            <div>
+            </div>
             <Link to='/home'>
             <button className={style.landingButton}>Start</button>
             </Link>

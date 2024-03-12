@@ -1,15 +1,14 @@
 .form {
-    background-image: url('../images/farben-verlauf-pastell-hintergrund.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 120vh;
-    width: 99vw;
+    margin: 45px 500px 45px 500px ;
+    border-radius: 6px;
+    color:black;
+    background-color: rgba(244, 244, 227, 0.774);
+    box-shadow: 8px 8px 20px 0px rgba(66, 68, 90, 1);
 }
 
 .formInput {
     background-color: rgba(239, 239, 239, 0.97);
-    border-radius: 50px;
+    border-radius: 6px;
     padding: 8px 60px 8px 10px;
     text-decoration: none;
 }
@@ -22,7 +21,6 @@
     text-transform:capitalize;
     overflow: hidden;
     transition: .5s;
-    /* letter-spacing: 2px; */
     border-radius: 50px;
     border: 0.05rem solid #595550;
     margin-top: 20px;
@@ -38,3 +36,43 @@
       0 0 20px #918a87,
       0 0 20px #918a87;
 }
+
+/*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.input {
+    position: relative;
+}
+
+.input input {
+    width: 300px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 0 15px;
+    border: 2px blue;
+    color: black;
+    outline: none;
+}
+
+.input label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color:#0b0b0c;
+    font-size: 19px;
+    pointer-events: none;
+    transition: .3s;
+}
+
+.input:focus ~ label {
+    top: 0;
+    left: 15px;
+    font-size: 16px;
+    padding: 0 2px;
+
+}*/

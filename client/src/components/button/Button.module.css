@@ -6,7 +6,7 @@
     text-transform:capitalize;
     overflow: hidden;
     transition: .5s;
-    /* letter-spacing: 2px; */
+
     border-radius: 50px;
     border: 0.05rem solid #595550;
 }

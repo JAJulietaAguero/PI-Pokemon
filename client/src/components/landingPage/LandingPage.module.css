@@ -1,9 +1,8 @@
-.landingContainer {
- background-image: url('../images/Pokemon-Symbol.jpg');
- background-position: center center;
- background-repeat: no-repeat;
- background-size: cover;
- height: 800px;
+.image {
+        padding: 40px 40px 40px 40px;
+        width:570px;
+        height:410px;
+        border:none;
 }
 
 .landingButton {
@@ -16,19 +15,19 @@
         text-transform: uppercase;
         overflow: hidden;
         transition: .5s;
-        margin-top: 40px;
+        margin-top: -700px;
         letter-spacing: 4px;
-        border-radius: 5px;
-        border: none;
+        border-radius: 6px;
 }
 
 .landingButton:hover {
+        cursor: pointer;
         background: #deded8;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #bdbeba,
-      0 0 25px #918a87,
-      0 0 50px #918a87,
-      0 0 100px #918a87;
+        color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #bdbeba,
+        0 0 25px #918a87,
+        0 0 50px #918a87,
+        0 0 100px #918a87;
 }
 
